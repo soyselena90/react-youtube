@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "common_mixin.scss"
+    ],
+    "names": [],
+    "file": "common_mixin.css"
+}

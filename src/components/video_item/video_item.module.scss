@@ -1,0 +1,36 @@
+@import "../../assets/css/common_mixin.scss";
+
+.container {
+   width: 50%;
+   padding: 0.2em;
+   display: inline-block;
+
+   .videoItem {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid lightgrey;
+      transition: transform 250ms ease-in;
+      box-shadow: 3px 3px 5px 0 rgba(191, 191, 191, 0.53);
+      border-radius: 2px;
+      &:hover {
+         transform: scale(1.02);
+      }
+      img {
+         width: 40%;
+         height: 100%;
+      }
+      > div {
+         margin-left: 0.5em;
+      }
+      p {
+         font-family: $roboto;
+         font-weight: 600;
+         font-size: 1.3rem;
+      }
+      .channelTitle {
+         font-weight: 500;
+         font-size: 1rem;
+      }
+   }
+}
