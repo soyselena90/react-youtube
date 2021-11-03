@@ -1,5 +1,4 @@
 .container {
-  width: 50%;
   padding: 0.2em;
   display: inline-block;
 }
@@ -47,5 +46,13 @@
   font-weight: 300;
   font-size: 1rem;
   color: #aaa;
+}
+
+.container.grid {
+  width: 50%;
+}
+
+.container.list {
+  width: 100%;
 }
 /*# sourceMappingURL=video_item.module.css.map */

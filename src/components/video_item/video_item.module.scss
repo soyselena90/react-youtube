@@ -1,7 +1,6 @@
 @import "../../assets/css/common_mixin.scss";
 
 .container {
-   width: 50%;
    padding: 0.2em;
    display: inline-block;
 
@@ -35,4 +34,11 @@
          color: #aaa;
       }
    }
+}
+
+.container.grid {
+   width: 50%;
+}
+.container.list {
+   width: 100%;
 }

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "video_detail.module.scss"
+    ],
+    "names": [],
+    "file": "video_detail.module.css"
+}
