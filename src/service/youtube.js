@@ -1,28 +1,38 @@
 class Youtube {
-   constructor(key) {
-      this.key = key;
-      this.getRequestOptions = {
-         method: "GET",
-         redirect: "follow",
-      };
+   // constructor(key) {
+   //    this.client = axios.create({
+   //       baseURL: "https://www.googleapis.com/youtube/v3",
+   //       params: { key: key },
+   //    });
+   // } // 어떤 것을 이용해서 통신하는지 숨기고 싶다면, key전달하지 않고 ...
+   constructor(httpClient) {
+      this.client = httpClient;
    }
 
    async mostPopular() {
-      const response = await fetch(
-         `https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`,
-         this.getRequestOptions
-      );
-      const result = await response.json();
-      return result.items;
+      const response = await this.client.get("videos", {
+         params: {
+            part: "snippet",
+            chart: "mostPopular",
+            maxResults: 25,
+         },
+      });
+      return response.data.items;
    }
 
    async search(query) {
-      const response = await fetch(
-         `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${this.key}`,
-         this.getRequestOptions
-      );
-      const result_1 = await response.json();
-      return result_1.items.map((item) => ({ ...item, id: item.id.videoid }));
+      const response = await this.client.get("search", {
+         params: {
+            part: "snippet",
+            maxResults: 25,
+            q: query,
+            type: "video",
+         },
+      });
+      return response.data.items.map((item) => ({
+         ...item,
+         id: item.id.videoid,
+      }));
    }
 }
 

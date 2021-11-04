@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=video_detail.module.css.map */
+.detail {
+  padding: 0.2em;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+/*# sourceMappingURL=video_detail.module.css.map */
